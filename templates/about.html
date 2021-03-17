@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>About</title>
+  </head>
+  <body>
+    <div class="pageContainer">
+    {% extends "template.html" %}
+    {% block content %}
+
+
+      <h1> About WhoLoL.gg </h1>
+      <p> WhoLoL.gg is a clone of websites like <a href="http://na.op.gg" style="text-decoration:underline; color: blue;">op.gg</a> created using Flask (a micro web framework written in Python). <br/><br/>
+
+          This site is a trimmed down, faster alternative to sites like op.gg. This base version of the site allows a user to 
+          search a League of Legends summoner name. If the searched player is currently in a match, the site will return information
+          about said match. The information is very trimmed down, displaying just the champion names, the summoner names, and ranked
+          data for all players in the match. <br/><br/>
+
+          The site is very modular, and more information about the current match could be added. Some examples
+          of additional content: a player's champion mastery of the champion they are playing as, the icon for their current ranking, and
+          their summoner level. If it's available through Riot's API data for a live game, it can be added. 
+      </p>
+    </div>
+    {% endblock %}
+  </body>
+</html>

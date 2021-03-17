@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WhoLoL.gg</title>
+  </head>
+  <body>
+    <div class="pageContainer">
+    {% extends "template.html" %}
+    {% block content %}
+      <div id="summonerSearch">
+        <form method="POST" novalidate enctype="multipart/form-data" action="{{url_for('home')}}">
+          <input type="text" placeholder="Enter a summoner name..." name="searchTerm"></input>
+          <input type="submit" value="Search"></button>
+        </form>
+      </div>
+      {% if matchInfo %}
+        <div>
+          <div id="matchType">
+            <p><strong>Game mode:</strong> {{matchInfo.gameMode}}</p>
+            <p><strong>Queue type:</strong> {{matchInfo.queueType}}</p>
+          </div>
+        </div>
+        <div id="matchTable">
+          <table>
+            <tr>
+              <th colspan="2">Champion</th>
+              <th colspan="2">SummonerName</th>
+              <th>Rank</th>
+            </tr>
+            {% for i in range(0,10) %}
+              {% if i == 0 %}
+                <tr>
+                  <td colspan="4">Blue Team: </td>
+                </tr>
+              {% endif %}
+              {% if i == 5 %}
+                <tr>
+                  <td colspan="4">Red Team: </td>
+                </tr>
+              {% endif %}
+              <tr>
+                <td class="classIcon"><img src="{{url_for('static', filename='img/champion/' + matchInfo.summoners[i].champ + '.png')}}" width="25"/></td>
+                <td class="className">{{matchInfo.summoners[i].champ}}</td>
+                <td class="classIcon"><img src = "{{url_for('static', filename='img/profileicon/' + matchInfo.summoners[i].profIcon + '.png')}}" width="25"></td>
+                <td>{{matchInfo.summoners[i].summName}}</td>
+                <td class="rankName">{{matchInfo.summoners[i].rankTier + " " + matchInfo.summoners[i].rankDiv}}  </td>
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+      {% endif %}
+      {% if not matchFound %}
+        <div>
+          <p>No live match found!</p>
+        </div>
+      {% endif %}
+      {% endblock %}
+    </div>
+  </body>
+</html>

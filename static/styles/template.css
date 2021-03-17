@@ -1,0 +1,96 @@
+header {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: center;
+}
+
+table, th, td {
+  border: 0.25px solid lightgray;
+  border-collapse: collapse;
+  padding: 5px;
+  font-size: 18px;
+}
+td {
+  margin: 10px;
+}
+
+table {
+  margin: auto;
+  box-shadow: 10px 10px 8px #888888;
+}
+
+li {
+  padding: 5px;
+  list-style: none
+}
+
+a:link, a:visited {
+  text-decoration: none;
+  color: black;
+}
+
+div {
+  padding: 10px;
+}
+
+p {
+  text-align: center;
+  margin-block-start: 0em;
+  padding: 10px;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: lightblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+ul {
+  padding-top: 10%;
+  display: inline-flex;
+  padding-inline-start: 20px;
+}
+h1 {
+  text-align: center;
+}
+
+/* ids */
+#matchTable {
+  align-self: center;
+}
+
+#summonerSearch {
+  text-align: center;
+}
+
+#matchType {
+  flex-direction: column;
+  text-align: center;
+}
+
+/* classes */
+.pageContainer {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 2%;
+  box-shadow: 10px 10px 8px #888888;
+  min-width: 538px;
+  max-width: 600px;
+  min-height: 175px;
+}
+
+.classIcon {
+  border-right: hidden;
+}
+
+.className {
+  border-left: hidden;
+}
+.rankName {
+  padding-left: 15px;
+  padding-right: 15px;
+}
